@@ -1,0 +1,11 @@
+{
+  "cc": [
+    "audit@example.com",
+    "records@example.com"
+  ],
+  "senderNames": [
+    "Jordan Lee",
+    "Sam Patel"
+  ],
+  "settlementDate": "31 October 2026"
+}
