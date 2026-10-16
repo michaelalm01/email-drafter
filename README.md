@@ -20,6 +20,12 @@ A dry run validates the CSV, template, and attachment files. It does not open Ou
 
 Classic Outlook is required. Batches of 25 or more drafts ask for confirmation. Pass `-Force` to skip that prompt.
 
+If Windows asks whether to run a downloaded script, unblock the folder once:
+
+```powershell
+Get-ChildItem -Recurse -File | Unblock-File
+```
+
 ## Sample files
 
 - `input/Recipients.csv` contains two fictional stores.

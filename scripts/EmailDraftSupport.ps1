@@ -330,8 +330,9 @@ function Write-DraftLog {
     if (-not [string]::IsNullOrWhiteSpace($directory) -and -not (Test-Path -LiteralPath $directory)) {
         New-Item -ItemType Directory -Path $directory | Out-Null
     }
-    $entry = '{0:yyyy-MM-dd HH:mm:ss}  {1}' -f (Get-Date), $Message
-    Add-Content -LiteralPath $LogPath -Value $entry -Encoding utf8
+    $entry = '{0:yyyy-MM-dd HH:mm:ss}  {1}{2}' -f (Get-Date), $Message, [Environment]::NewLine
+    $encoding = New-Object System.Text.UTF8Encoding $false
+    [System.IO.File]::AppendAllText($LogPath, $entry, $encoding)
 }
 
 function Get-FileContentHash {
